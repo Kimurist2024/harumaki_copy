@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { AccessToken } from "livekit-server-sdk";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 /**
  * Guest-only token endpoint (no login required).

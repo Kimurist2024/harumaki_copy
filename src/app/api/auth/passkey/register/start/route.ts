@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { setPasskeyRegState } from "@/lib/session";
 
 export const runtime = "nodejs";
-
+export const dynamic = "force-dynamic";
 export async function GET() {
   try {
     // 仮ユーザー（主催者）を作成 or 取得
