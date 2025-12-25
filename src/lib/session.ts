@@ -1,4 +1,4 @@
-import { SignJWT, jwtVerify } from "jose";
+import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 import { cookies } from "next/headers";
 
 const SESSION_COOKIE = "qc_session";
@@ -45,7 +45,7 @@ export async function getSessionUserId(): Promise<string | null> {
 export type PendingPasskey = { userId?: string; challenge: string };
 
 async function setTempCookie(name: string, data: object, expiresIn: string) {
-  const token = await new SignJWT(data)
+  const token = await new SignJWT(data as JWTPayload)
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime(expiresIn)
