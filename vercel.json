@@ -3,7 +3,6 @@
   "buildCommand": "npx prisma generate && npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "regions": ["iad1", "sfo1", "sin1"],
   "functions": {
     "src/app/api/livekit/token/route.ts": {
       "maxDuration": 10
